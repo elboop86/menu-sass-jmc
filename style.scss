@@ -1,119 +1,113 @@
-$bezier-t: cubic-bezier(0.23, 1, 0.32, 1);
+$bezier-t: cubic-bezier(0.23, 1, 0.32, 1); // Variable que define una curva de transición personalizada para las animaciones.
 
 body {
-    background-color: #fff;
-    color: #0B0B0B;
+    background-color: #fff; // Establece el color de fondo del cuerpo del documento.
+    color: #0B0B0B; // Establece el color del texto en el cuerpo del documento.
 }
 
 p {
-    max-width: 1300px;
-    font-size: 24px;
+    max-width: 1300px; // Define el ancho máximo para los párrafos.
+    font-size: 24px; // Define el tamaño de fuente para los párrafos.
 }
 
 .centred-elements {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    font-size: 2rem;
+    display: grid; // Utiliza el modelo de diseño de cuadrícula.
+    place-items: center; // Centra los elementos en la cuadrícula tanto vertical como horizontalmente.
+    height: 100vh; // Establece la altura al 100% del viewport.
+    width: 100%; // Establece el ancho al 100% del contenedor.
+    text-align: center; // Centra el texto.
+    font-size: 2rem; // Define el tamaño de fuente.
 }
 
 .burger {
-    width: 60px;
-    height: 60px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    background-color: rgba($color: #000000, $alpha: 0);
-    position: fixed;
-    top: 20px;
-    right: 40px;
-    z-index: 20;
+    width: 60px; // Ancho del botón de la hamburguesa.
+    height: 60px; // Altura del botón de la hamburguesa.
+    display: grid; // Utiliza el modelo de diseño de cuadrícula.
+    place-items: center; // Centra los elementos en la cuadrícula tanto vertical como horizontalmente.
+    cursor: pointer; // Cambia el cursor al pasar sobre el elemento.
+    border: 0; // Sin borde.
+    padding: 0; // Sin relleno.
+    margin: 0; // Sin margen.
+    background-color: rgba($color: #000000, $alpha: 0); // Fondo transparente.
+    position: fixed; // Posiciona el botón de forma fija en la pantalla.
+    top: 20px; // A 20px desde la parte superior.
+    right: 40px; // A 40px desde la derecha.
+    z-index: 20; // Coloca el botón sobre otros elementos.
 }
 
 .burger-inner {
-    position: relative;
-    
+    position: relative; // Posiciona los elementos hijos de forma relativa.
 }
 
 .burger-inner-line {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 29px;
-    margin: 0 auto;
-    background-color: #EE2678;
+    display: block; // Define como bloque.
+    position: absolute; // Posiciona de forma absoluta dentro del contenedor.
+    height: 3px; // Altura de 3px para las líneas.
+    width: 29px; // Ancho de 29px para las líneas.
+    margin: 0 auto; // Centra horizontalmente.
+    background-color: #EE2678; // Color de fondo.
 
     &:nth-child(2) {
-        position: relative;
+        position: relative; // Posiciona el segundo hijo de forma relativa.
     }
 
     &:first-child {
-        bottom: 6px;
-        transition: top 250ms 250ms $bezier-t, tranform 250ms
-        $bezier-t;
+        bottom: 6px; // A 6px desde la parte inferior.
+        transition: top 250ms 250ms $bezier-t, transform 250ms $bezier-t; // Transición para la posición superior y la transformación.
     }
 
     &:last-child {
-        top: 6px;
-        transition: top 250ms 250ms $bezier-t, traansform 250ms
-        $bezier-t;
+        top: 6px; // A 6px desde la parte superior.
+        transition: top 250ms 250ms $bezier-t, transform 250ms $bezier-t; // Transición para la posición superior y la transformación.
     }
 }
 
 .toggled .burger-inner-line {
-    background-color: #b81c1c;
+    background-color: #b81c1c; // Cambia el color de fondo al estar toggled.
 
     &:nth-child(2) {
-        background-color: transparent;
+        background-color: transparent; // El segundo hijo se vuelve transparente.
     }
 
-    &:first-child{
-        bottom: 0;
-        transform: rotate(-45deg);
-        transition: top 250ms 250ms $bezier-t, traansform 250ms
-        $bezier-t;
+    &:first-child {
+        bottom: 0; // A 0 desde la parte inferior.
+        transform: rotate(-45deg); // Rotación de -45 grados.
+        transition: top 250ms 250ms $bezier-t, transform 250ms $bezier-t; // Transición para la posición superior y la transformación.
     }
 
     &:last-child {
-        top: 0;
-        transform: rotate(45deg);
-        transition: top 250ms 250ms $bezier-t, traansform 250ms
-        $bezier-t;
+        top: 0; // A 0 desde la parte superior.
+        transform: rotate(45deg); // Rotación de 45 grados.
+        transition: top 250ms 250ms $bezier-t, transform 250ms $bezier-t; // Transición para la posición superior y la transformación.
     }
 }
 
-/*Menú*/
+/* Menú */
 
-.wrapper-main-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    place-items: center;
-    padding: 2rem;
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
-    background-image: linear-gradient(to right bottom, #FE2678, #4400AB);
-    transition: all 400ms ease;
+.wrapper-main-nav {
+    position: fixed; // Posiciona de forma fija en la pantalla.
+    top: 0; // A 0 desde la parte superior.
+    left: 0; // A 0 desde la izquierda.
+    height: 100vh; // Altura al 100% del viewport.
+    width: 100vw; // Ancho al 100% del viewport.
+    display: grid; // Utiliza el modelo de diseño de cuadrícula.
+    place-items: center; // Centra los elementos en la cuadrícula tanto vertical como horizontalmente.
+    padding: 2rem; // Relleno de 2 rems.
+    z-index: 10; // Coloca el elemento sobre otros elementos.
+    visibility: hidden; // Oculta el menú inicialmente.
+    opacity: 0; // Transparencia inicial.
+    background-image: linear-gradient(to right bottom, #FE2678, #4400AB); // Fondo con gradiente lineal.
+    transition: all 400ms ease; // Transición para todas las propiedades.
 
     &.active {
-        visibility: visible;
-        opacity: 1;
+        visibility: visible; // Hace visible el menú.
+        opacity: 1; // Opacidad completa.
 
         .main-nav-item {
-
             @for $i from 1 through 4 {
-                &:nth-child(#{ $i }) {
-                    animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both ( 400ms * $i );
-                 }
+                &:nth-child(#{$i}) {
+                    animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both (400ms * $i); // Animación de expansión con retraso escalonado.
+                }
             }
         }
     }
@@ -121,44 +115,45 @@ p {
 
 @keyframes expand {
     0% {
-        letter-spacing: -1rem;
-        filter: blur(12px);
-        opacity: 0;
+        letter-spacing: -1rem; // Espaciado de letras negativo.
+        filter: blur(12px); // Efecto de desenfoque.
+        opacity: 0; // Transparencia completa.
     }
 
     100% {
-        letter-spacing: 0.2rem;
-        filter: blur(0);
-        opacity: 1;
+        letter-spacing: 0.2rem; // Espaciado de letras reducido.
+        filter: blur(0); // Sin desenfoque.
+        opacity: 1; // Opacidad completa.
     }
 }
 
 .main-nav {
     &-list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        margin: 0; // Sin margen.
+        padding: 0; // Sin relleno.
+        list-style: none; // Sin estilo de lista.
     }
 
     &-item {
-        text-align: center;
-        opacity: 1;
+        text-align: center; // Centra el texto.
+        opacity: 1; // Opacidad completa.
     }
 
-    &-item:not(:last-child){
-        margin-bottom: 32px;
+    &-item:not(:last-child) {
+        margin-bottom: 32px; // Margen inferior de 32px para todos menos el último hijo.
     }
 
     &-link {
-       text-decoration: none;
-       color: #fff;
-       font-weight: bold;
-       font-size: 3.75rem;
-       width: 100%;
+        text-decoration: none; // Sin subrayado.
+        color: #fff; // Color de texto blanco.
+        font-weight: bold; // Texto en negrita.
+        font-size: 3.75rem; // Tamaño de fuente.
+        width: 100%; // Ancho completo.
 
-       &:hover {
-        text-decoration: none;
-       }
+        &:hover {
+            text-decoration: none; // Sin subrayado al pasar el ratón.
+        }
     }
 }
+
 

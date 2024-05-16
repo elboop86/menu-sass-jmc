@@ -1,146 +1,165 @@
 @charset "UTF-8";
+/* Especifica el conjunto de caracteres utilizado en el archivo CSS, en este caso UTF-8. */
+
 body {
-  background-color: #fff;
-  color: #0B0B0B;
+  background-color: #fff; /* Establece el color de fondo del cuerpo del documento a blanco. */
+  color: #0B0B0B; /* Establece el color del texto a un negro oscuro. */
 }
 
 p {
-  max-width: 1300px;
-  font-size: 24px;
+  max-width: 1300px; /* Define un ancho máximo de 1300px para los párrafos. */
+  font-size: 24px; /* Establece el tamaño de fuente a 24px para los párrafos. */
 }
 
 .centred-elements {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
+  display: grid; /* Utiliza una rejilla para centrar los elementos en ambas direcciones. */
+  place-items: center; /* Centra los elementos en ambas direcciones. */
+  height: 100vh; /* Ocupa toda la altura de la ventana. */
+  width: 100%; /* Ocupa todo el ancho de la ventana. */
+  text-align: center; /* Centra el texto horizontalmente. */
+  font-size: 2rem; /* Establece el tamaño de fuente a 2rem. */
 }
 
 .burger {
-  width: 60px;
-  height: 60px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 20px;
-  right: 40px;
-  z-index: 20;
+  width: 60px; /* Define el ancho del botón de menú a 60px. */
+  height: 60px; /* Define la altura del botón de menú a 60px. */
+  display: grid; /* Utiliza una rejilla para centrar los elementos dentro del botón. */
+  place-items: center; /* Centra los elementos dentro del botón en ambas direcciones. */
+  cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa sobre el botón. */
+  border: 0; /* Elimina el borde del botón. */
+  padding: 0; /* Elimina el padding del botón. */
+  margin: 0; /* Elimina el margen del botón. */
+  background-color: rgba(0, 0, 0, 0); /* Hace el fondo del botón transparente. */
+  position: fixed; /* Fija el botón en una posición específica en la ventana. */
+  top: 20px; /* Posiciona el botón a 20px desde la parte superior de la ventana. */
+  right: 40px; /* Posiciona el botón a 40px desde el lado derecho de la ventana. */
+  z-index: 20; /* Asegura que el botón esté por encima de otros elementos. */
 }
 
 .burger-inner {
-  position: relative;
+  position: relative; /* Define una posición relativa para el contenedor interno del botón. */
 }
 
 .burger-inner-line {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 29px;
-  margin: 0 auto;
-  background-color: #EE2678;
+  display: block; /* Muestra la línea como un bloque. */
+  position: absolute; /* Posiciona las líneas absolutamente dentro del contenedor. */
+  height: 3px; /* Define la altura de las líneas. */
+  width: 29px; /* Define el ancho de las líneas. */
+  margin: 0 auto; /* Centra las líneas horizontalmente. */
+  background-color: #EE2678; /* Establece el color de fondo de las líneas a rosa. */
 }
+
 .burger-inner-line:nth-child(2) {
-  position: relative;
+  position: relative; /* Define una posición relativa para la segunda línea. */
 }
+
 .burger-inner-line:first-child {
-  bottom: 6px;
-  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), tranform 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  bottom: 6px; /* Posiciona la primera línea a 6px desde abajo. */
+  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1); /* Define las transiciones para la primera línea. */
 }
+
 .burger-inner-line:last-child {
-  top: 6px;
-  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), traansform 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  top: 6px; /* Posiciona la última línea a 6px desde arriba. */
+  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1); /* Define las transiciones para la última línea. */
 }
 
 .toggled .burger-inner-line {
-  background-color: #b81c1c;
-}
-.toggled .burger-inner-line:nth-child(2) {
-  background-color: transparent;
-}
-.toggled .burger-inner-line:first-child {
-  bottom: 0;
-  transform: rotate(-45deg);
-  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), traansform 250ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.toggled .burger-inner-line:last-child {
-  top: 0;
-  transform: rotate(45deg);
-  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), traansform 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  background-color: #b81c1c; /* Cambia el color de fondo de las líneas a rojo oscuro cuando el menú está activado. */
 }
 
-/*Menú*/
+.toggled .burger-inner-line:nth-child(2) {
+  background-color: transparent; /* La segunda línea se vuelve transparente cuando el menú está activado. */
+}
+
+.toggled .burger-inner-line:first-child {
+  bottom: 0; /* Mueve la primera línea a su posición original. */
+  transform: rotate(-45deg); /* Rota la primera línea 45 grados en sentido antihorario. */
+  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1); /* Define las transiciones para la primera línea cuando está activada. */
+}
+
+.toggled .burger-inner-line:last-child {
+  top: 0; /* Mueve la última línea a su posición original. */
+  transform: rotate(45deg); /* Rota la última línea 45 grados en sentido horario. */
+  transition: top 250ms 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1); /* Define las transiciones para la última línea cuando está activada. */
+}
+
+/* Menú */
 .wrapper-main-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  place-items: center;
-  padding: 2rem;
-  z-index: 10;
-  visibility: hidden;
-  opacity: 0;
-  background-image: linear-gradient(to right bottom, #FE2678, #4400AB);
-  transition: all 400ms ease;
+  position: fixed; /* Fija el contenedor del menú en una posición específica en la ventana. */
+  top: 0; /* Posiciona el contenedor del menú en la parte superior de la ventana. */
+  left: 0; /* Posiciona el contenedor del menú en el lado izquierdo de la ventana. */
+  height: 100vh; /* Ocupa toda la altura de la ventana. */
+  width: 100vw; /* Ocupa todo el ancho de la ventana. */
+  display: grid; /* Utiliza una rejilla para centrar los elementos dentro del contenedor. */
+  place-items: center; /* Centra los elementos dentro del contenedor en ambas direcciones. */
+  padding: 2rem; /* Añade un padding de 2rem alrededor del contenedor. */
+  z-index: 10; /* Asegura que el contenedor del menú esté por encima de otros elementos. */
+  visibility: hidden; /* Oculta el contenedor del menú por defecto. */
+  opacity: 0; /* Hace el contenedor del menú completamente transparente por defecto. */
+  background-image: linear-gradient(to right bottom, #FE2678, #4400AB); /* Define un degradado de fondo para el contenedor del menú. */
+  transition: all 400ms ease; /* Define una transición para todos los cambios en el contenedor del menú. */
 }
+
 .wrapper-main-nav.active {
-  visibility: visible;
-  opacity: 1;
+  visibility: visible; /* Hace visible el contenedor del menú cuando está activo. */
+  opacity: 1; /* Hace opaco el contenedor del menú cuando está activo. */
 }
+
 .wrapper-main-nav.active .main-nav-item:nth-child(1) {
-  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 400ms;
+  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 400ms; /* Anima el primer elemento del menú con un retraso de 400ms. */
 }
+
 .wrapper-main-nav.active .main-nav-item:nth-child(2) {
-  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 800ms;
+  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 800ms; /* Anima el segundo elemento del menú con un retraso de 800ms. */
 }
+
 .wrapper-main-nav.active .main-nav-item:nth-child(3) {
-  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 1200ms;
+  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 1200ms; /* Anima el tercer elemento del menú con un retraso de 1200ms. */
 }
+
 .wrapper-main-nav.active .main-nav-item:nth-child(4) {
-  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 1600ms;
+  animation: expand 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both 1600ms; /* Anima el cuarto elemento del menú con un retraso de 1600ms. */
 }
 
 @keyframes expand {
   0% {
-    letter-spacing: -1rem;
-    filter: blur(12px);
-    opacity: 0;
+    letter-spacing: -1rem; /* Comienza con un espaciado de letras negativo. */
+    filter: blur(12px); /* Aplica un desenfoque significativo. */
+    opacity: 0; /* Comienza completamente transparente. */
   }
   100% {
-    letter-spacing: 0.2rem;
-    filter: blur(0);
-    opacity: 1;
+    letter-spacing: 0.2rem; /* Termina con un espaciado de letras positivo. */
+    filter: blur(0); /* Elimina el desenfoque. */
+    opacity: 1; /* Termina completamente opaco. */
   }
 }
+
 .main-nav-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.main-nav-item {
-  text-align: center;
-  opacity: 1;
-}
-.main-nav-item:not(:last-child) {
-  margin-bottom: 32px;
-}
-.main-nav-link {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 3.75rem;
-  width: 100%;
-}
-.main-nav-link:hover {
-  text-decoration: none;
+  margin: 0; /* Elimina el margen de la lista de navegación. */
+  padding: 0; /* Elimina el padding de la lista de navegación. */
+  list-style: none; /* Elimina los estilos de lista predeterminados. */
 }
 
-/*# sourceMappingURL=style.css.map */
+.main-nav-item {
+  text-align: center; /* Centra el texto dentro de los elementos de navegación. */
+  opacity: 1; /* Establece la opacidad de los elementos de navegación a 1. */
+}
+
+.main-nav-item:not(:last-child) {
+  margin-bottom: 32px; /* Añade un margen inferior de 32px a todos los elementos de navegación excepto el último. */
+}
+
+.main-nav-link {
+  text-decoration: none; /* Elimina la decoración de texto de los enlaces de navegación. */
+  color: #fff; /* Establece el color del texto de los enlaces a blanco. */
+  font-weight: bold; /* Hace que el texto de los enlaces sea negrita. */
+  font-size: 3.75rem; /* Establece el tamaño de fuente de los enlaces a 3.75rem. */
+  width: 100%; /* Hace que los enlaces ocupen todo el ancho disponible. */
+}
+
+.main-nav-link:hover {
+  text-decoration: none; /* Asegura que la decoración de texto sigue siendo ninguna al pasar el cursor sobre los enlaces. */
+}
+
+/*# sourceMappingURL=style.css.map */ /* Comentario para el archivo de mapa de origen CSS, utilizado para depuración. */
+
